@@ -25,7 +25,7 @@ SECRET_KEY = '=h2(v*+93sld+l)0jdux_*mly%a!msmyx==a1pk+)f*i$+pidn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
     'django.contrib.admin',
+    'social_django',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +133,15 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
+AUTHENTICATION_BACKENDS = [
+'django.contrib.auth.backends.ModelBackend',
+'account.authentication.EmailAuthBackend',
+'social_core.backends.facebook.FacebookOAuth2',
+'social_core.backends.google.GoogleOAuth2',
+]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '730056511166281'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ddd2dc860be6b1d2e2eac820d5a28472'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '490888923681-ft2snm7dms52rvubu1ug67n2nb05rkkv.apps.googleusercontent.com' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Am9Nq7LZtdEWwJ7FuSb65B-f' # Google Consumer Secret
