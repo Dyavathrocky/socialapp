@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'social_django',
     'django_extensions',
     'images.apps.ImagesConfig',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +147,5 @@ SOCIAL_AUTH_FACEBOOK_SECRET = 'ddd2dc860be6b1d2e2eac820d5a28472'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '490888923681-ft2snm7dms52rvubu1ug67n2nb05rkkv.apps.googleusercontent.com' # Google Consumer Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Am9Nq7LZtdEWwJ7FuSb65B-f' # Google Consumer Secret
+
+THUMBNAIL_DEBUG=True
